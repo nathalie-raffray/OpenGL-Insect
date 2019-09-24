@@ -1,0 +1,149 @@
+<?xml version="1.0"?>
+<!-- hierachrical definition of a character -->
+
+<doc>
+    <node type="freejoint" name="root">
+    	<geom type="wireDodec" name="torso" fixedRotation="90 0 0" position="0 0.5 0" scale="2.5 1 1">
+    	  <geom type="solidDodec" name="innerTorso" position="0 0 0" scale="0.5 0.5 0.5" color="0 0 1" />
+		  <geom type="wireDodec" name="innerTorsoCage1" position="0 0 0" scale="0.6 0.6 0.6" color="0 0 1" />
+		  <geom type="wireDodec" name="innerTorsoCage2" position="0 0 0" scale="0.9 0.9 0.9" color="0 0 1" />
+		  <geom type="solidDodec" name="rib1" position="-1 0 0" scale="0.05 0.25 0.35" color="0 0 1" />
+		  <geom type="solidDodec" name="rib2" position="1 0 0" scale="0.05 0.25 0.35" color="0 0 1" />
+		  <geom type="solidDodec" name="rib3" position="0 0 0" scale="0.05 1 0.7" color="0 0 1" />
+		  <geom type="solidDodec" name="rib4" position="0.75 0 0" scale="0.05 0.5 0.45" color="0 0 1" />
+		  <geom type="solidDodec" name="rib5" position="-0.75 0 0" scale="0.05 0.5 0.45" color="0 0 1" />
+		  <geom type="solidDodec" name="rib5" position="0.5 0 0" scale="0.05 0.75 0.55" color="0 0 1" />
+		  <geom type="solidDodec" name="rib6" position="-0.5 0 0" scale="0.05 0.75 0.55" color="0 0 1" />
+		  <geom type="solidDodec" name="rib7" position="0.25 0 0" scale="0.05 0.85 0.75" color="0 0 1" />
+		  <geom type="solidDodec" name="rib7" position="-0.25 0 0" scale="0.05 0.85 0.75" color="0 0 1" />	 
+		</geom>
+
+		<geom type="solidCube" name="chest" position="3.2 -0.05 0" fixedRotation="0 0 -56.34" scale="0.115 2.08 1" color="0 0 1">
+		</geom>
+
+		<node type="spherical" name="shoulder1" position="3.75 0.25 0.2" euler="90 40 0" xLimits="60 85" yLimits="30 60" zLimits="0 0"> 
+				<geom type="solidCone" name="arm socket1" position="0 0 0" scale="0.3 0.3 0.3" color="0 0 1"/>
+				<geom type="solidCone" name="upperarm1" fixedRotation="0 -180 0" position="0 0 2.5" scale="0.23 0.285 2.395" color="0 0 1"/>
+				<node type="rotary" name="elbow1" position="0 0 2.6" axis="0 1 0" min="-30" max="90">
+					<geom type="solidSphere" name="elbowhinge1" scale="0.23 0.3 0.3" position="0 0 0" color="0 0 1"/>
+					<geom type="solidCone" name="lowerarm1" fixedRotation="0 -90 0" position="0 0 0" scale="0.23 0.285 2.395" color="0 0 1"/>
+					<node type="rotary" name="digit-joint1" position="-2.3 0 0" axis="0 1 0" min="-30" max="80">
+						<geom type="solidCone" name="digit1" position="0 0 -0.65" scale="0.16 0.13 0.745" color="0 0 1"/>
+						<geom type="solidSphere" name="digit-hinge1" scale="0.1 0.1 0.1" position="0 0 0" color="0 0 1"/>
+						<geom type="wireSphere" name="fist1" scale="0.2 0.2 0.2" position="0 0 -0.75" color="0 0 1"/>
+
+					</node>
+				</node>
+	   	</node>
+
+	   	<node type="spherical" name="shoulder2" position="3.75 0.25 -0.22" euler="90 40 0" xLimits="95 120" yLimits="30 60" zLimits="0 0"> 
+				<geom type="solidCone" name="arm socket2" position="0 0 0" scale="0.3 0.3 0.3" color="0 0 1"/>
+				<geom type="solidCone" name="upperarm2" fixedRotation="0 -180 0" position="0 0 2.5" scale="0.23 0.285 2.395" color="0 0 1"/>
+				<node type="rotary" name="elbow2" position="0 0 2.6" axis="0 1 0" min="-30" max="90">
+					<geom type="solidSphere" name="elbowhinge2" scale="0.23 0.3 0.3" position="0 0 0" color="0 0 1"/>
+					<geom type="solidCone" name="lowerarm2" fixedRotation="0 -90 0" position="0 0 0" scale="0.23 0.285 2.395" color="0 0 1"/>
+					<node type="rotary" name="digit-joint2" position="-2.3 0 0" axis="0 1 0" min="-30" max="80">
+						<geom type="solidCone" name="digit2" position="0 0 -0.65" scale="0.16 0.13 0.745" color="0 0 1"/>
+						<geom type="solidSphere" name="digit-hinge2" scale="0.1 0.1 0.1" position="0 0 0" color="0 0 1"/>
+						<geom type="wireSphere" name="fist2" scale="0.2 0.2 0.2" position="0 0 -0.75" color="0 0 1"/>
+
+					</node>
+				</node>
+	   	</node>
+	   
+
+	   	<node type="rotary" name="rightwing1-joint" axis="1 0 0" max="36" min="-45" position="0 1.15 1.65"> 
+			   	<geom type="wireDodec" name="rightwing1" fixedRotation="90 0 90" position="0 0 2.3" scale="1.57 0.41 0.025" color="0 0.755 1">
+			    	  <geom type="wireDodec" name="innerTorsoCage2" position="0 0 0" scale="0.9 0.9 0.9" color="0 0 1" />
+			    	  <geom type="wireDodec" name="innerTorsoCage2" position="0 0 0" scale="0.85 0.85 0.85" color="0 0 1" />
+			    	   <geom type="wireDodec" name="innerTorsoCage2" position="0 0 0" scale="0.8 0.8 0.8" color="0 0 1" />
+			    	  <geom type="wireDodec" name="innerTorsoCage2" position="0 0 0" scale="0.75 0.75 0.75" color="0 0 1" />
+			    	   <geom type="wireDodec" name="innerTorsoCage2" position="0 0 0" scale="0.7 0.7 0.7" color="0 0 1" />
+				</geom>
+				<geom type="solidSphere" name="droplet1" position="0 0 5.9" scale="0.1 0.1 1" color="0 0 1"/>
+				<geom type="solidSphere" name="droplet2" position="0.2 0 4" scale="0.1 0.1 0.1" color="0 0.3375 0.456"/>
+				<geom type="solidSphere" name="droplet3" position="0 0 4.4" scale="0.1 0.1 0.1" color="0 0.3375 0.7655"/>
+				<geom type="solidSphere" name="droplet4" position="0 0 2.3" scale="0.31 0.205 1" color="0.345 0 1"/>
+				<geom type="solidSphere" name="droplet5" position="-0.25 0 4.1" scale="0.1 0.1 0.1" color="0 0.397 1"/>
+				
+
+				<geom type="solidDodec" name="rightwing2" fixedRotation="104.76 0 90" position="0 -0.75 2.6" scale="1.78 0.54 0.075" color="0 0.531 1"/>
+				
+				<geom type="solidSphere" name="anotherdroplet1" position="0.85 -0.7 2.6" scale="0.1 0.1 0.1" color="1 1 1"/>
+				<geom type="solidSphere" name="anotherdroplet2" position="-0.85 -0.7 2.6" scale="0.1 0.1 0.1" color="1 1 1"/>
+		
+
+				<geom type="wireDodec" name="rightwing3" fixedRotation="119.7 0 90" position="0 -1.3 2.3" scale="1.66 1 0.05" color="1 0 0">
+			    	  <geom type="solidDodec" name="innerTorso" position="0 0 0" scale="0.5 0.5 0.5" color="0 0 1" />
+					  <geom type="wireDodec" name="innerTorsoCage1" position="0 0 0" scale="0.6 0.6 0.6" color="0 0 1" />
+					  <geom type="wireDodec" name="innerTorsoCage2" position="0 0 0" scale="0.9 0.9 0.9" color="0 0 1" />
+					  <geom type="solidDodec" name="rib1" position="-1 0 0" scale="0.05 0.25 0.35" color="1 0 0" />
+					  <geom type="solidDodec" name="rib2" position="1 0 0" scale="0.05 0.25 0.35" color="1 0 0" />
+					  <geom type="solidDodec" name="rib3" position="0 0 0" scale="0.05 1 0.7" color="1 0 0" />
+					  <geom type="solidDodec" name="rib4" position="0.75 0 0" scale="0.05 0.5 0.45" color="0 0 1" />
+					  <geom type="solidDodec" name="rib5" position="-0.75 0 0" scale="0.05 0.5 0.45" color="0 0 1" />
+					  <geom type="solidDodec" name="rib6" position="0.5 0 0" scale="0.05 0.75 0.55" color="1 0 0" />
+					  <geom type="solidDodec" name="rib7" position="-0.5 0 0" scale="0.05 0.75 0.55" color="1 0 0" />
+					  <geom type="solidDodec" name="rib8" position="0.25 0 0" scale="0.05 0.85 0.75" color="0 0 1" />
+					  <geom type="solidDodec" name="rib9" position="-0.25 0 0" scale="0.05 0.85 0.75" color="0 0 1" />	 
+				</geom>
+		</node>
+		<node type="rotary" name="leftwing2-joint" axis="1 0 0" max="45" min="-36" position="0 1.15 -1.65"> 
+			 <geom type="wireDodec" name="leftwing1" fixedRotation="90 0 90" position="0 0 -2.3" scale="1.57 0.41 0.025" color="0 0.755 1">
+			    	  <geom type="wireDodec" name="innerTorsoCage2" position="0 0 0" scale="0.9 0.9 0.9" color="0 0 1" />
+			    	  <geom type="wireDodec" name="innerTorsoCage2" position="0 0 0" scale="0.85 0.85 0.85" color="0 0 1" />
+			    	   <geom type="wireDodec" name="innerTorsoCage2" position="0 0 0" scale="0.8 0.8 0.8" color="0 0 1" />
+			    	  <geom type="wireDodec" name="innerTorsoCage2" position="0 0 0" scale="0.75 0.75 0.75" color="0 0 1" />
+			    	   <geom type="wireDodec" name="innerTorsoCage2" position="0 0 0" scale="0.7 0.7 0.7" color="0 0 1" />
+				</geom>
+				<geom type="solidSphere" name="droplet1" position="0 0 -5.9" scale="0.1 0.1 1" color="0 0 1"/>
+				<geom type="solidSphere" name="droplet2" position="0.2 0 -4" scale="0.1 0.1 0.1" color="0 0.3375 0.456"/>
+				<geom type="solidSphere" name="droplet3" position="0 0 -4.4" scale="0.1 0.1 0.1" color="0 0.3375 0.7655"/>
+				<geom type="solidSphere" name="droplet4" position="0 0 -2.3" scale="0.31 0.205 1" color="0.345 0 1"/>
+				<geom type="solidSphere" name="droplet5" position="-0.25 0 -4.1" scale="0.1 0.1 0.1" color="0 0.397 1"/>
+				
+
+				<geom type="solidDodec" name="leftwing2" fixedRotation="77.04 0 90" position="0 -0.75 -2.6" scale="1.78 0.54 0.075" color="0 0.531 1"/>
+				
+				<geom type="solidSphere" name="anotherdroplet1" position="0.85 -0.7 -2.6" scale="0.1 0.1 0.1" color="1 1 1"/>
+				<geom type="solidSphere" name="anotherdroplet2" position="-0.85 -0.7 -2.6" scale="0.1 0.1 0.1" color="1 1 1"/>
+		
+
+				<geom type="wireDodec" name="leftwing3" fixedRotation="64.98 0 90" position="0 -1.3 -2.3" scale="1.66 1 0.05" color="1 0 0">
+			    	  <geom type="solidDodec" name="innerTorso" position="0 0 0" scale="0.5 0.5 0.5" color="0 0 1" />
+					  <geom type="wireDodec" name="innerTorsoCage1" position="0 0 0" scale="0.6 0.6 0.6" color="0 0 1" />
+					  <geom type="wireDodec" name="innerTorsoCage2" position="0 0 0" scale="0.9 0.9 0.9" color="0 0 1" />
+					  <geom type="solidDodec" name="rib1" position="-1 0 0" scale="0.05 0.25 0.35" color="1 0 0" />
+					  <geom type="solidDodec" name="rib2" position="1 0 0" scale="0.05 0.25 0.35" color="1 0 0" />
+					  <geom type="solidDodec" name="rib3" position="0 0 0" scale="0.05 1 0.7" color="1 0 0" />
+					  <geom type="solidDodec" name="rib4" position="0.75 0 0" scale="0.05 0.5 0.45" color="0 0 1" />
+					  <geom type="solidDodec" name="rib5" position="-0.75 0 0" scale="0.05 0.5 0.45" color="0 0 1" />
+					  <geom type="solidDodec" name="rib6" position="0.5 0 0" scale="0.05 0.75 0.55" color="1 0 0" />
+					  <geom type="solidDodec" name="rib7" position="-0.5 0 0" scale="0.05 0.75 0.55" color="1 0 0" />
+					  <geom type="solidDodec" name="rib8" position="0.25 0 0" scale="0.05 0.85 0.75" color="0 0 1" />
+					  <geom type="solidDodec" name="rib9" position="-0.25 0 0" scale="0.05 0.85 0.75" color="0 0 1" />	 
+				</geom>
+
+		</node>
+
+
+		<geom type="solidSphere" name="neck" position="3.95 0.95 0" scale="0.35 0.7 0.255" color="0 0 1" />
+	
+		<node type="spherical" name="head twist" euler="0 0 0" position="3.95 2.55 0" xLimits="-40 55.44" yLimits="-180 180" zLimits="-180 180" >
+			<geom type="wireSphere" name="head1" position="0 0 0" scale="1.1 1.1 1.1" color="0 0 0" stacks="10" slices="20"/>
+			<geom type="solidSphere" name="eyeball" wink="true" position="0 0 0" scale="0.9 0.9 0.9" color="1 1 1">
+				<geom type="solidSphere" name="iris" position="0 0 0.55" scale="0.65 0.5 0.5" color="0.5955 0.84 0.786" />
+			</geom>
+			<geom type="solidSphere" name="head shading" position="0 0 -0.05" scale="1.055 1.055 0.98" color="0.2 0.2 0.2"/>
+			
+		</node>
+		
+		<node type="rotary" name="tailJoint" position="-4.2 0.7 0" setAngle="-80" axis="0 1 0" max="-37" min="-131">
+			<geom type="solidCone" name="tail1" fixedRotation="0 -180 0" position="0 0 2.5" scale="-0.36 -0.07 2.525" color="0 0 1"/>
+			<geom type="solidCone" name="tail2" fixedRotation="0 -180 0" position="0 0 2.5" scale="-0.36 -0.07 -1.6" color="0 0 1"/>
+		</node>
+		
+	 
+	   
+	</node>
+</doc>
