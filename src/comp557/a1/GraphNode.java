@@ -1,3 +1,11 @@
+
+/*
+ * COMP 557 ASSIGNMENT 1
+ * NATHALIE RAFFRAY
+ * 260682940
+ */
+
+
 package comp557.a1;
 
 import java.util.Collection;

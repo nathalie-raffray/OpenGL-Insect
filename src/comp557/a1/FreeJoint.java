@@ -1,3 +1,10 @@
+/*
+ * COMP 557 ASSIGNMENT 1
+ * NATHALIE RAFFRAY
+ * 260682940
+ */
+
+
 package comp557.a1;
 
 import com.jogamp.opengl.GL2;
@@ -21,9 +28,9 @@ public class FreeJoint extends GraphNode {
 		dofs.add( tx = new DoubleParameter( "tx", 0, -2, 2 ) );		
 		dofs.add( ty = new DoubleParameter( "ty", 0, -2, 2 ) );
 		dofs.add( tz = new DoubleParameter( "tz", 0, -2, 2 ) );
-		dofs.add( rx = new DoubleParameter( "rx", 0, -180, 180 ) );		
-		dofs.add( ry = new DoubleParameter( "ry", 0, -180, 180 ) );
-		dofs.add( rz = new DoubleParameter( "rz", 0, -180, 180 ) );
+		dofs.add( rx = new DoubleParameter( "rx", 25, -180, 180 ) );		
+		dofs.add( ry = new DoubleParameter( "ry", -23, -180, 180 ) );
+		dofs.add( rz = new DoubleParameter( "rz", 3.78, -180, 180 ) );
 	}
 	
 	@Override
@@ -38,20 +45,12 @@ public class FreeJoint extends GraphNode {
 		gl.glRotated(ry.getValue(), 0, 1, 0);
 		gl.glRotated(rz.getValue(), 0, 0, 1);
 		
-//		gl.glBegin (GL2.GL_LINES);//static field
-//	      gl.glVertex3f(0.50f,-0.50f,0);
-//	      gl.glVertex3f(-0.50f,0.50f,0);
-//	      gl.glEnd();
-		
 		
 		
 
 		super.display(drawable);
 		gl.glPopMatrix();
-		
-		//here is where I would pop it. 
 
-		// TODO: implement the rest of this method​‌​​​‌‌​​​‌‌​​​‌​​‌‌‌​​‌
 	}
 
 	

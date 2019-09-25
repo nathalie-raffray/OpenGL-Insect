@@ -1,3 +1,10 @@
+/*
+ * COMP 557 ASSIGNMENT 1
+ * NATHALIE RAFFRAY
+ * 260682940
+ */
+
+
 package comp557.a1;
 
 import java.awt.GridLayout;
@@ -30,7 +37,7 @@ import mintools.swing.VerticalFlowPanel;
 public class KeyFrameAnimatedScene {
 
     /** 120 frames at 30 frames per section for 4 seconds of animation ​‌​​​‌‌​​​‌‌​​​‌​​‌‌‌​​‌*/
-    private final int NUM_FRAMES = 120;
+    private final int NUM_FRAMES = 76;
     
     /** The root of the scene graph / character */
     private GraphNode root = null;
@@ -296,7 +303,7 @@ public class KeyFrameAnimatedScene {
 	public void loadKeyFrames() {
     	keyPoses.clear();
         try {
-            FileInputStream fis = new FileInputStream( new File("a1data/character.xml"));//dont know about this
+            FileInputStream fis = new FileInputStream( new File("a1data/keyposes.javabin"));//dont know about this
             ObjectInputStream ois = new ObjectInputStream(fis);
             keyPoses = (ArrayList<double[]>) ois.readObject();                
             fis.close();

@@ -1,3 +1,10 @@
+/*
+ * COMP 557 ASSIGNMENT 1
+ * NATHALIE RAFFRAY
+ * 260682940
+ */
+
+
 package comp557.a1;
  		  	  				   
 import java.io.File;
@@ -91,15 +98,12 @@ public class CharacterFromXML {
 			Vector2d xLimits = new Vector2d(-180, 180);
 			Vector2d yLimits = new Vector2d(-180, 180);
 			Vector2d zLimits = new Vector2d(-180, 180);
-			//Vector2d def = new Vector2d(-180, 180);
 			
 			if ( (getVector2dAttr(dataNode,"xLimits")) != null ) xLimits = new Vector2d(getVector2dAttr(dataNode,"xLimits"));
 			if ( (getVector2dAttr(dataNode,"yLimits")) != null ) yLimits = new Vector2d(getVector2dAttr(dataNode,"yLimits"));
 			if ( (getVector2dAttr(dataNode,"zLimits")) != null ) zLimits = new Vector2d(getVector2dAttr(dataNode,"zLimits"));
 			
-			
-			// public SphericalJoint( String name, Point3d euler, Point3d position, Vector2d xLimits, Vector2d yLimits,
-			//Vector2d zLimits)
+
 			if(getTuple3dAttr(dataNode,"euler") != null) {
 				euler = new Point3d(getTuple3dAttr(dataNode,"euler"));
 			}else {
@@ -114,10 +118,6 @@ public class CharacterFromXML {
 				System.out.println("Position is not specified for "+name+" with type "+type+". Please indicate position.");
 				System.exit(1);
 			}
-			
-//			SphericalJoint joint = new SphericalJoint( name );
-//			if ( (t=getTuple3dAttr(dataNode,"position")) != null ) joint.setPosition( t );			
-//			return joint;
 			
 		} else if ( type.equals("rotary") ) {
 			// position and axis are required... passing null to set methods
@@ -144,8 +144,7 @@ public class CharacterFromXML {
 				setAngle = 0;
 			}
 			
-			//RotaryJoint( String name, double min, double max, Point3d position, 
-			 //Point3d axis)
+	
 			if(getTuple3dAttr(dataNode,"axis") != null && getTuple3dAttr(dataNode,"position") != null) {
 				axis = new Point3d(getTuple3dAttr(dataNode,"axis"));
 				position = new Point3d(getTuple3dAttr(dataNode,"position"));
@@ -156,10 +155,6 @@ public class CharacterFromXML {
 				System.exit(1);
 			}
 			
-//			Hinge joint = new Hinge( name );
-//			joint.setPosition( getTuple3dAttr(dataNode,"position") );
-//			joint.setAxis( getTuple3dAttr(dataNode,"axis") );
-//			return joint;
 			
 		}
 		return null;
@@ -196,27 +191,11 @@ public class CharacterFromXML {
 				if ( (dataNode.getAttributes().getNamedItem("slices")) != null) {
 					geom.setSlices( Integer.parseInt(dataNode.getAttributes().getNamedItem("slices").getNodeValue()) );
 				}
-				//if ( (slices=dataNode.getAttributes().getNamedItem("slices").getNodeValue()) != null) geom.setSlices( Integer.parseInt(slices) );
+				
 			}
 			return geom;
 		}
 		
-		
-		//if ( type.equals("wireCube" ) || type.equals("wireSphere")) {
-			//if ( stacks!= null) geom.setStacks( Integer.parseInt(stacks) );
-			//if ( slices!= null) geom.setSlices( Integer.parseInt(slices) );
-//			BodyBox geom = new BodyBox( name );
-//			if ( (t=getTuple3dAttr(dataNode,"center")) != null ) geom.setCentre( t );
-//			if ( (t=getTuple3dAttr(dataNode,"scale")) != null ) geom.setScale( t );
-//			if ( (t=getTuple3dAttr(dataNode,"color")) != null ) geom.setColor( t );
-//			return geom;
-	//	} else if ( type.equals( "wireSphere" ) || type.equals("solidSphere")) {
-//			BodySphere geom = new BodySphere( name );				
-//			if ( (t=getTuple3dAttr(dataNode,"center")) != null ) geom.setCentre( t );
-//			if ( (t=getTuple3dAttr(dataNode,"scale")) != null ) geom.setScale( t );
-//			if ( (t=getTuple3dAttr(dataNode,"color")) != null ) geom.setColor( t );
-//			return geom;	
-	//	}
 		return null;		
 		
 	}

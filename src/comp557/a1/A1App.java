@@ -1,3 +1,10 @@
+/*
+ * COMP 557 ASSIGNMENT 1
+ * NATHALIE RAFFRAY
+ * 260682940
+ */
+
+
 package comp557.a1;
 
 import java.awt.BorderLayout;
@@ -50,7 +57,7 @@ public class A1App implements GLEventListener {
         GLCapabilities glcap = new GLCapabilities(glp);
         GLCanvas glCanvas = new GLCanvas( glcap );
         final FPSAnimator animator; 
-        animator = new FPSAnimator(glCanvas, 30);
+        animator = new FPSAnimator(glCanvas, 10); //SETS FRAMES
         animator.start();
         ControlFrame controls = new ControlFrame("Controls", new Dimension( 600,600 ), new Point(680,0) );
         controls.add("Key Frame Controls", scene.getControls() );
